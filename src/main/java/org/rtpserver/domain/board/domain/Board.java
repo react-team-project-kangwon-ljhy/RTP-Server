@@ -1,6 +1,10 @@
 package org.rtpserver.domain.board.domain;
 
+import io.hypersistence.utils.hibernate.type.array.StringArrayType;
 import jakarta.persistence.*;
+import org.hibernate.annotations.Type;
+
+import java.util.List;
 
 @Entity
 public class Board {
@@ -17,8 +21,14 @@ public class Board {
     private String title;
 
     @Column(nullable = false)
-    private String content;
+    private String contents;
 
-    @Column(nullable = false)
-    private String password;
+    @Type(StringArrayType.class)
+    @Column(columnDefinition = "varchar[]")
+    private List<String> tags;
+
+//    @Type(StringArrayType.class)
+//    @Column(columnDefinition = "varchar[]")
+//    private List<String> imgs;
+
 }
