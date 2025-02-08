@@ -40,6 +40,12 @@ public class Board {
 //    @Column(columnDefinition = "varchar[]")
 //    private List<String> imgs;
 
+    public Board(String title, String contents, List<String> tags) {
+        this.title = title;
+        this.contents = contents;
+        this.tags = tags;
+    }
+
     public Board(Users user, String title, String contents, List<String> tags) {
         this.user = user;
         this.title = title;
