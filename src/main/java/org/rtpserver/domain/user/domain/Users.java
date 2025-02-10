@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.rtpserver.domain.user.domain.value.Authority;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Getter
@@ -19,5 +20,8 @@ public class Users {
     private String userName;
 
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Authority authority;
 
 }
