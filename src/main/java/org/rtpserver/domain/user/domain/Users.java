@@ -24,4 +24,22 @@ public class Users {
     @Enumerated(EnumType.STRING)
     private Authority authority;
 
+    public void updateAuthority(Authority authority) {
+        this.authority = authority;
+    }
+
+    public void updatePassword(String password) {
+        this.password = password;
+    }
+
+    public void updateUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void update(String userName, String password, Authority authority) {
+        this.userName = userName;
+        this.password = password;
+        this.authority = authority;
+    }
+
 }
