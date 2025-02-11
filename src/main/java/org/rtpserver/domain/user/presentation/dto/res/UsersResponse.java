@@ -1,4 +1,8 @@
 package org.rtpserver.domain.user.presentation.dto.res;
 
-public record UsersResponse() {
+import java.util.List;
+
+public record UsersResponse(
+        List<UserResponse> usersResponse
+) {
 }
