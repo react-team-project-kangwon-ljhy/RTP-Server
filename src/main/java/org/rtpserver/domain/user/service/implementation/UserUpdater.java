@@ -16,6 +16,7 @@ public class UserUpdater {
         updatableUser.update(
                 users.getUserName(),
                 users.getPassword(),
+                users.getUserDescription(),
                 users.getAuthority()
         );
 
@@ -41,6 +42,14 @@ public class UserUpdater {
     public void updateUserName(Users updatableUser, String userName){
         updatableUser.updateUserName(
                 userName
+        );
+
+        userRepository.save(updatableUser);
+    }
+
+    public void updateUserDescription(Users updatableUser, String userDescription){
+        updatableUser.updateUserDescription(
+                userDescription
         );
 
         userRepository.save(updatableUser);

@@ -8,8 +8,7 @@ import org.rtpserver.domain.board.service.implementation.BoardCreator;
 import org.rtpserver.domain.board.service.implementation.BoardDeleter;
 import org.rtpserver.domain.board.service.implementation.BoardReader;
 import org.rtpserver.domain.board.service.implementation.BoardUpdater;
-import org.rtpserver.domain.user.domain.Users;
-import org.rtpserver.domain.user.domain.repository.UsersRepository;
+import org.rtpserver.domain.user.service.implementation.UserReader;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,7 +19,7 @@ public class CommandBoardService {
     private final BoardUpdater boardUpdater;
     private final BoardDeleter boardDeleter;
     private final BoardReader boardReader;
-    private final UsersReader usersReader;
+    private final UserReader usersReader;
 
     public void create(String accessToken, CreateBoardRequest request) {
         Long userId = jwtPayloadDecoder.jwtPayloadDecodeToUserId(accessToken);

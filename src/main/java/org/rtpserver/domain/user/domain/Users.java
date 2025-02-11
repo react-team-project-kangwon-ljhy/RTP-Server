@@ -21,6 +21,8 @@ public class Users {
 
     private String password;
 
+    private String userDescription;
+
     @Enumerated(EnumType.STRING)
     private Authority authority;
 
@@ -36,9 +38,14 @@ public class Users {
         this.userName = userName;
     }
 
-    public void update(String userName, String password, Authority authority) {
+    public void updateUserDescription(String userDescription) {
+        this.userDescription = userDescription;
+    }
+
+    public void update(String userName, String password, String userDescription, Authority authority) {
         this.userName = userName;
         this.password = password;
+        this.userDescription = userDescription;
         this.authority = authority;
     }
 
