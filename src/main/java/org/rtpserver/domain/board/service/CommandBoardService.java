@@ -9,6 +9,7 @@ import org.rtpserver.domain.board.service.implementation.BoardDeleter;
 import org.rtpserver.domain.board.service.implementation.BoardReader;
 import org.rtpserver.domain.board.service.implementation.BoardUpdater;
 import org.rtpserver.domain.user.service.implementation.UserReader;
+import org.rtpserver.global.jwt.decode.JWTPayloadDecoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,9 +21,10 @@ public class CommandBoardService {
     private final BoardDeleter boardDeleter;
     private final BoardReader boardReader;
     private final UserReader usersReader;
+    private final JWTPayloadDecoder jWTPayloadDecoder;
 
     public void create(String accessToken, CreateBoardRequest request) {
-        Long userId = jwtPayloadDecoder.jwtPayloadDecodeToUserId(accessToken);
+        Long userId = jWTPayloadDecoder.jwtPayloadDecodeToUserId(accessToken);
 
         boardCreator.save(new Board(
                 usersReader.findById(userId),
@@ -33,7 +35,7 @@ public class CommandBoardService {
     }
 
     public void update(String accessToken, Long boardId, UpdateBoardRequest request) {
-        Long userId = jwtPayloadDecoder.jwtPayloadDecodeToUserId(accessToken);
+        Long userId = jWTPayloadDecoder.jwtPayloadDecodeToUserId(accessToken);
         Board board = boardReader.findById(boardId);
 
         if(board.getUser().getUserId().equals(userId)){
@@ -49,7 +51,7 @@ public class CommandBoardService {
     }
 
     public void delete(String accessToken, Long boardId) {
-        Long userId = jwtPayloadDecoder.jwtPayloadDecodeToUserId(accessToken);
+        Long userId = jWTPayloadDecoder.jwtPayloadDecodeToUserId(accessToken);
         Board board = boardReader.findById(boardId);
 
         if(board.getUser().getUserId().equals(userId)){
