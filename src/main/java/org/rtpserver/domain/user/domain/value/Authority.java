@@ -2,7 +2,8 @@ package org.rtpserver.domain.user.domain.value;
 
 public enum Authority {
     USER("ROLE_USER"),
-    STUDENT("ROLE_STUDENT");
+    STUDENT("ROLE_STUDENT"),
+    TEACHER("ROLE_TEACHER");
 
     private final String value;
 

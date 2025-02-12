@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.rtpserver.domain.user.domain.Users;
 import org.rtpserver.domain.user.domain.repository.UserRepository;
 import org.rtpserver.domain.user.domain.value.Authority;
+import org.rtpserver.domain.user.presentation.dto.req.UpdateUserRequest;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,12 +13,12 @@ public class UserUpdater {
 
     private final UserRepository userRepository;
 
-    public void update(Users updatableUser, Users users){
+    public void update(Users updatableUser, UpdateUserRequest users){
         updatableUser.update(
-                users.getUserName(),
-                users.getPassword(),
-                users.getUserDescription(),
-                users.getAuthority()
+                users.userName(),
+                users.password(),
+                users.userDescription(),
+                users.authority()
         );
 
         userRepository.save(updatableUser);
