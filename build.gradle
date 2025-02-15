@@ -25,14 +25,14 @@ repositories {
 
 dependencies {
 //	implementation 'org.springframework.boot:spring-boot-starter-graphql'
-	implementation 'com.netflix.graphql.dgs:graphql-dgs-platform-dependencies'
-	implementation 'com.netflix.graphql.dgs:dgs-starter'
+//	implementation 'com.netflix.graphql.dgs:graphql-dgs-platform-dependencies'
+//	implementation 'com.netflix.graphql.dgs:dgs-starter'
+//	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 	implementation 'io.hypersistence:hypersistence-utils-hibernate-63:3.8.2'
 	implementation 'io.jsonwebtoken:jjwt:0.12.3'
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.4.0'
