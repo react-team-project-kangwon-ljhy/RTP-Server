@@ -23,7 +23,7 @@ public class UserController {
         return queryUserService.getUsers();
     }
 
-    @GetMapping
+    @GetMapping("/accessToken")
     public UserResponse getUserByAccessToken(
             @RequestHeader String accessToken
     ) {
